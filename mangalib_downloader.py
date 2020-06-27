@@ -63,7 +63,7 @@ async def get_chapter(chapter_id, manga_name):
     print(f'Chapter {chapter_name} download: Start')
 
     for image in chapter_info['images']:
-        img_url = f'https://img2.mangalib.me/manga/{manga_name}/chapters/{chapter_slug}/{image}'
+        img_url = f'https://img3.mangalib.me/manga/{manga_name}/chapters/{chapter_slug}/{image}'
 
         data = await get_image(img_url)
 
