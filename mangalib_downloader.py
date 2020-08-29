@@ -77,8 +77,7 @@ async def get_chapter(chapter_id, manga_name):
 
 
 async def main(url):
-    tasks = list()
-    portion = 10  # optimal portion value to download from mangalib and not getting to much of errors
+    portion = 5  # optimal portion value to download from mangalib and not getting to much of errors
     # Get manga data
     manga_page_response = requests.get(url)
     manga_name = manga_page_response.request.path_url.replace('/', '')
@@ -91,6 +90,7 @@ async def main(url):
     portion_count = ceil(len(chapters_ids) / portion)
 
     for i in range(portion_count):
+        tasks = list()
         from_index = portion * i
         to_index = portion * (i + 1)
 
